@@ -1,6 +1,7 @@
 package users;
 
 import java.util.Scanner;
+import database.UserData;
 
 public class ProgramInteraction {
 	
@@ -43,14 +44,25 @@ public class ProgramInteraction {
 		return newUser;
 	}
 	
-	public static void displayUserInformation(Users i){
-		
-		System.out.println("Name: " + i.getName());
-		System.out.println("Username: " + i.getUsername());
-		System.out.println("Starting Weight: " + i.getStartWeight());
-		System.out.println("Goal Weight: " + i.getGoalWeight());
-		
-		i.getProgress().printDailyWeights();
+	
+	public static String getName(String username){
+		return UserData.getName(username);
+	}
+	
+	public static double getStartWeight(String username){
+		return UserData.getStartWeight(username);
+	}
+	
+	public static double getGoalWeight(String username){
+		return UserData.getGoalWeight(username);
+	}
+	
+	public static String getProgress(String username){
+		StringBuilder builder = new StringBuilder();
+		for(String s: UserData.getDailyWeights(username)){
+			builder.append(s);
+		}
+		return builder.toString();
 	}
 
 }
