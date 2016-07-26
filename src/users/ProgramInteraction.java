@@ -64,5 +64,11 @@ public class ProgramInteraction {
 		}
 		return builder.toString();
 	}
+	
+	public static void addNewDailyWeight(String username, double weight){
+		DailyWeights current = new DailyWeights(weight);
+		database.UserData.addDailyWeight(username, current.getCurrentWeight(), current.getDay());
+		
+	}
 
 }

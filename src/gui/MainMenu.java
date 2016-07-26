@@ -15,7 +15,7 @@ public class MainMenu {
 	 */
 	public static void mainMenu(){
 		mainFrame = new JFrame("Main Menu");
-		mainFrame.setSize(300,400);
+		mainFrame.setSize(500,500);
 		mainFrame.setLayout(new GridLayout(3,3));
 			
 		JButton newUserButton = new JButton("Sign Up");
